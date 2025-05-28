@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IPL 2025 Final - Multi Page Article</title>
+
+  <!-- ✅ Google Site Verification Code (replace with your actual code) -->
+  <meta name="google-site-verification" content="abc123XYZ_verification_code_example" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,51 +47,51 @@
 </head>
 <body>
 
-<div class="article">
-  <h1>IPL 2025 Final: A Night of Glory and Drama</h1>
-  <div id="page-content">
-    <!-- Dynamic content will be injected here -->
+  <div class="article">
+    <h1>IPL 2025 Final: A Night of Glory and Drama</h1>
+    <div id="page-content">
+      <!-- Page content goes here -->
+    </div>
+
+    <div class="navigation">
+      <button id="prev-btn" onclick="changePage(-1)">Previous</button>
+      <button id="next-btn" onclick="changePage(1)">Next</button>
+    </div>
   </div>
 
-  <div class="navigation">
-    <button id="prev-btn" onclick="changePage(-1)">Previous</button>
-    <button id="next-btn" onclick="changePage(1)">Next</button>
-  </div>
-</div>
+  <script>
+    const pages = [
+      "Page 1: The grand finale of the Indian Premier League 2025 was a night to remember. Fans gathered at the Narendra Modi Stadium, and millions tuned in to witness cricket’s biggest spectacle.",
+      "Page 2: The finalists, Chennai Super Kings (CSK) and Kolkata Knight Riders (KKR), entered the field with roaring cheers echoing across the stadium.",
+      "Page 3: Chennai, captained by MS Dhoni, won the toss and chose to bat first. The openers gave a steady start as Ruturaj Gaikwad played with elegance.",
+      "Page 4: By the 10th over, CSK had reached 85/2. Dube and Rayudu kept the scoreboard ticking, pushing for a strong finish.",
+      "Page 5: A late flourish by Dube helped CSK post 178/6. The crowd erupted as Dhoni came in the final overs, possibly for his last IPL innings.",
+      "Page 6: KKR began their chase confidently. Venkatesh Iyer struck early boundaries, but the middle order struggled against Jadeja’s spin.",
+      "Page 7: Needing 40 runs off the last 3 overs, Andre Russell launched a counterattack, hitting massive sixes to reignite hopes.",
+      "Page 8: However, tight bowling from Tushar Deshpande in the final over sealed the game for CSK. KKR ended at 169/8.",
+      "Page 9: CSK were crowned IPL 2025 champions — their sixth title. Jadeja was awarded Man of the Match for his all-round performance.",
+      "Page 10: The final was emotionally charged, as fans believe it was Dhoni’s farewell match. The IPL 2025 ended as a perfect celebration of cricket."
+    ];
 
-<script>
-  const pages = [
-    "Page 1: The grand finale of the Indian Premier League 2025 was a night to remember. Fans gathered at the Narendra Modi Stadium, and millions tuned in to witness cricket’s biggest spectacle.",
-    "Page 2: The finalists, Chennai Super Kings (CSK) and Kolkata Knight Riders (KKR), entered the field with roaring cheers echoing across the stadium.",
-    "Page 3: Chennai, captained by MS Dhoni, won the toss and chose to bat first. The openers gave a steady start as Ruturaj Gaikwad played with elegance.",
-    "Page 4: By the 10th over, CSK had reached 85/2. Dube and Rayudu kept the scoreboard ticking, pushing for a strong finish.",
-    "Page 5: A late flourish by Dube helped CSK post 178/6. The crowd erupted as Dhoni came in the final overs, possibly for his last IPL innings.",
-    "Page 6: KKR began their chase confidently. Venkatesh Iyer struck early boundaries, but the middle order struggled against Jadeja’s spin.",
-    "Page 7: Needing 40 runs off the last 3 overs, Andre Russell launched a counterattack, hitting massive sixes to reignite hopes.",
-    "Page 8: However, tight bowling from Tushar Deshpande in the final over sealed the game for CSK. KKR ended at 169/8.",
-    "Page 9: CSK were crowned IPL 2025 champions — their sixth title. Jadeja was awarded Man of the Match for his all-round performance.",
-    "Page 10: The final was emotionally charged, as fans believe it was Dhoni’s farewell match. The IPL 2025 ended as a perfect celebration of cricket."
-  ];
+    let currentPage = 0;
+    const contentDiv = document.getElementById("page-content");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
 
-  let currentPage = 0;
-  const contentDiv = document.getElementById("page-content");
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
+    function renderPage() {
+      contentDiv.textContent = pages[currentPage];
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = currentPage === pages.length - 1;
+    }
 
-  function renderPage() {
-    contentDiv.textContent = pages[currentPage];
-    prevBtn.disabled = currentPage === 0;
-    nextBtn.disabled = currentPage === pages.length - 1;
-  }
+    function changePage(offset) {
+      currentPage += offset;
+      renderPage();
+    }
 
-  function changePage(offset) {
-    currentPage += offset;
+    // Initialize page
     renderPage();
-  }
-
-  // Initialize
-  renderPage();
-</script>
+  </script>
 
 </body>
 </html>
